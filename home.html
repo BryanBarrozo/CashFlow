@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashFlow</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="head_main">
+        <h1>CashFlow</h1>
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="trans.html">Transações</a>
+            <a href="stats.html">Stats</a>
+        </nav>
+    </header>
+
+    <main >
+        <div class="main_left">
+            <div class="div_titulo">
+                <h1>Insights financeiros</h1>
+                <p>Sua saúde finaceiro ,curada com inteligência.</p>
+            </div>
+            <section class="all_cards">
+
+                <article class="card blue">
+                    <div class="head_card">
+                        <h2>SALDO TOTAL</h2>
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 id="card_saldo">R$ 0</h3>
+                </article>
+
+                <article class="card green">
+                    <div class="head_card">
+                        <h2>ENTRADAS</h2>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <h3 id="card_entrada">R$ 0</h3>
+                </article>
+
+                <article class="card red">
+                    <div class="head_card">
+                        <h2>SAIDAS</h2>
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
+                    <h3 id="card_saida">R$ 0</h3>
+                </article>
+            </section>
+            <section class="tabela">
+                <div class="head_tabela">
+                    <h3>Histórico de Transações</h3>
+                    <button type="button" id="open"><i class="fa-solid fa-plus"></i> Adicionar Transaçãos</button>
+                </div>
+                <div class="div_tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Data</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista_tabela"><!--JS add elementos-->       
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="main-right"><!--Working!!!-->
+            <section class="grafico">
+             <h3>Grafico de Gastos</h3>
+            
+            <div class="div_grafico">
+                <canvas id="grafico"></canvas>
+            </div>
+
+            </section>
+
+
+
+
+
+        </div>
+
+        <dialog>
+                <form id="form">
+                    <header class="head_modal">
+                        <div>
+                            <h1>Nova Transação</h1>
+                            <p>Registre um novo movimento finaceiro</p>
+                        </div>
+                        <button type="button" id="close1"><i class="fa-solid fa-x"></i></button>
+                    </header>
+                    <!--botão entrada/saida-->
+                    <div class="div_input_radio">
+                        <input type="radio" name="tipo" id="entrada" value="entrada" checked>
+                        <label for="entrada">
+                            <i class="fa-solid fa-circle-arrow-up"></i> Entrada
+                        </label>
+
+                        <input type="radio" name="tipo" id="saida" value="saida">
+                        <label for="saida">
+                            <i class="fa-solid fa-circle-arrow-down"></i> Saída
+                        </label>
+                    </div>
+                    <!--Input dos VALORES R$-->
+                    <div class="div_valores">
+                        <label for="valor">VALOR DO LANÇAMENTO</label>
+                        <div class="div_input_valores" id="verificar_valor">
+                            <span>R$</span>
+                            <input type="number" name="valor" placeholder="0,00" id="input_valor">
+                        </div>
+                        
+                        <div class="div_descricao">
+                            <label for="nome">DESCRIÇÃO</label>
+                            <div id="verificar_nome">
+                                <i class="fa-solid fa-list-ul"></i>
+                                <input type="text" name="Descrição" placeholder="Ex: Aluguel, Supermercado..." id="input_nome">
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="div_data_select">
+                        <div class="div_data">
+                            <label for="data">DATA</label>
+                            <div id="verificar_data">
+                                <input type="date" name="data" id="input_data">
+                            </div>
+                        </div>
+                        <div class="div_categoria">
+                            <label for="categoria">CATEGORIA</label>
+                            <div id="verificar_select">
+                                <select id="categoria">
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="Salario" class="entrada_option">Salário</option>
+                                    <option value="Mercado" class="saida_option hide">Mercado</option>
+                                    <option value="Aluguel"
+                                    class="saida_option hide">Aluguel</option>
+                                    <option value="Lazer"
+                                    class="saida_option hide">Lazer</option>
+                                    <option value="Outros"
+                                    class="saida_option hide">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <menu class="modal_button">
+                        <button type="button" id="close2" value="Cancelar">Cancelar</button>
+                        <button type="submit" id="submit" value="Salvar Transação">Salvar Transação</button>
+                    </menu>
+
+                </form>
+        </dialog>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
