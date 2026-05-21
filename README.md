@@ -41,9 +41,9 @@ O objetivo do projeto foi praticar desenvolvimento front-end moderno utilizando 
 
 ## Preview
 <img width="1401" height="681" alt="pagina main" src="https://github.com/user-attachments/assets/b5cc0fc0-0232-48ea-903a-25808cce155c" />
-#Mobile
+##Mobile
 <img width="311" height="674" alt="mobile" src="https://github.com/user-attachments/assets/7ce4c1bc-c41b-49f1-b45e-414ade577333" />
-#form
+##form
 <img width="516" height="613" alt="form CashFlow" src="https://github.com/user-attachments/assets/587a5390-e0be-4707-8a04-152acf6d4028" />
 
 
